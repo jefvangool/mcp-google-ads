@@ -1,0 +1,68 @@
+name: google-ads-mcp
+version: 1.0.0
+description: Google Ads MCP server for accessing Google Ads API data
+author: Your Name
+license: MIT
+
+runtime:
+  type: python
+  version: "3.11"
+
+entrypoint: google_ads_server.py
+
+configSchema:
+  type: object
+  properties:
+    GOOGLE_ADS_CREDENTIALS_PATH:
+      type: string
+      description: "Path to OAuth client credentials JSON file"
+      default: "client_secret.json"
+    GOOGLE_ADS_DEVELOPER_TOKEN:
+      type: string
+      description: "Google Ads API developer token"
+      required: true
+    GOOGLE_ADS_LOGIN_CUSTOMER_ID:
+      type: string
+      description: "Google Ads customer ID (10 digits, no dashes)"
+      required: true
+    GOOGLE_ADS_AUTH_TYPE:
+      type: string
+      description: "Authentication type: 'oauth' or 'service_account'"
+      default: "oauth"
+      enum: ["oauth", "service_account"]
+    GOOGLE_ADS_IMPERSONATION_EMAIL:
+      type: string
+      description: "Email to impersonate (for service account with domain-wide delegation)"
+      required: false
+
+dependencies:
+  - mcp>=0.0.11
+  - pydantic>=2.7.2
+  - google-auth>=2.25.2
+  - google-auth-oauthlib>=1.1.0
+  - google-auth-httplib2>=0.1.1
+  - requests>=2.31.0
+  - python-dotenv>=1.0.0
+  - matplotlib>=3.7.3
+  - pandas>=2.1.4
+  - python-jose>=3.5.0
+  - pyasn1>=0.5.0
+
+files:
+  - google_ads_server.py
+  - requirements.txt
+  - README.md
+  - LICENSE
+
+exclude:
+  - .git/
+  - .venv/
+  - __pycache__/
+  - *.pyc
+  - .env
+  - service_account.json
+  - client_secret.json
+  - google_ads_token.json
+  - test_*.py
+  - docs/
+  - .cursor/ 

@@ -1,0 +1,36 @@
+{
+  "name": "google-ads-mcp",
+  "version": "1.0.0",
+  "description": "Google Ads MCP server for accessing Google Ads API data",
+  "main": "google_ads_server.py",
+  "scripts": {
+    "deploy": "npx -y @smithery/cli@latest deploy .",
+    "deploy:github": "npx -y @smithery/cli@latest deploy github:",
+    "start": "python google_ads_server.py",
+    "test": "python test_google_ads_mcp.py"
+  },
+  "keywords": [
+    "mcp",
+    "google-ads",
+    "claude",
+    "ai",
+    "advertising",
+    "analytics"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/mcp-google-ads.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/mcp-google-ads/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/mcp-google-ads#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@smithery/cli": "latest"
+  }
+}
