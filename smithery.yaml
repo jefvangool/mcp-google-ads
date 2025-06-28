@@ -4,11 +4,10 @@ description: Google Ads MCP server for accessing Google Ads API data
 author: Your Name
 license: MIT
 
-runtime:
-  type: python
-  version: "3.11"
-
-entrypoint: google_ads_server.py
+# Use Docker deployment
+deployment:
+  type: docker
+  dockerfile: Dockerfile
 
 configSchema:
   type: object
@@ -53,6 +52,7 @@ files:
   - requirements.txt
   - README.md
   - LICENSE
+  - Dockerfile
 
 exclude:
   - .git/
